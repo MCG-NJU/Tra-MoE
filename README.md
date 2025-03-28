@@ -2,7 +2,7 @@
 
 
 
-[Jiange Yang](https://yangjiangeyjg.github.io/), [Haoyi Zhu](https://www.haoyizhu.site/), [Yating Wang](https://scholar.google.com/citations?hl=zh-CN&user=5SuBWh0AAAAJ), [Gangshan Wu](https://mcg.nju.edu.cn/member/gswu/index.html), [Tong He](http://tonghe90.github.io/), [Liming Wang](https://wanglimin.github.io/)
+[Jiange Yang](https://yangjiangeyjg.github.io/), [Haoyi Zhu](https://www.haoyizhu.site/), [Yating Wang](https://github.com/xiaoxiao0406), [Gangshan Wu](https://mcg.nju.edu.cn/member/gswu/index.html), [Tong He](http://tonghe90.github.io/), [Liming Wang](https://wanglimin.github.io/)
 </div>
 
 
