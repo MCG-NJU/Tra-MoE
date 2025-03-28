@@ -63,3 +63,24 @@ USE_BFLOAT16=false python -m scripts.train_libero_policy_atm --suite $SUITE_NAME
 ```
 USE_BFLOAT16=false python -m scripts.eval_libero_policy --suite $SUITE_NAME --exp-dir $PATH_TO_EXP
 ```
+
+## Citation
+Please cite the following paper if you feel this repository useful for your research.
+```
+
+```
+## Acknowledges
+
+Thanks to the open source of the following projects:
+
+[ATM](https://github.com/Large-Trajectory-Model/ATM/tree/main)
+
+[CoTracker](https://github.com/facebookresearch/co-tracker) 
+
+[mixture-of-experts](https://github.com/lucidrains/mixture-of-experts)
+
+[st-moe-pytorch](https://github.com/lucidrains/st-moe-pytorch/tree/main)
+
+[RealRobot](https://github.com/HaoyiZhu/RealRobot)
+
+
