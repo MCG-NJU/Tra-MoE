@@ -70,6 +70,10 @@ USE_BFLOAT16=false python -m scripts.train_libero_policy_atm --suite $SUITE_NAME
 USE_BFLOAT16=false python -m scripts.eval_libero_policy --suite $SUITE_NAME --exp-dir $PATH_TO_EXP
 ```
 
+## Checkpoints
+
+You can download our trained [checkpoints](https://drive.google.com/file/d/1TgpTWf8gR0X6IMF43_LGxYYDeDS-CC43/view?usp=sharing).
+
 ## Citation
 
 Please cite the following paper if you feel this repository useful for your research.
