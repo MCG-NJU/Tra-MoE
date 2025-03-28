@@ -1,5 +1,11 @@
 ## [CVPR 2025] [Tra-MoE: Learning Trajectory Prediction Model from Multiple Domains for Adaptive Policy Conditioning](https://arxiv.org/abs/2411.14519)
 
+
+
+[Jiange Yang](https://yangjiangeyjg.github.io/), [Haoyi Zhu](https://www.haoyizhu.site/), [Yating Wang](https://scholar.google.com/citations?hl=zh-CN&user=5SuBWh0AAAAJ), [Gangshan Wu](https://mcg.nju.edu.cn/member/gswu/index.html), [Tong He](http://tonghe90.github.io/), [Liming Wang](https://wanglimin.github.io/)
+</div>
+
+
 ![caps](./tra_moe.png)
 
 ## Low-Cost Dual-Arm Robot Demos
