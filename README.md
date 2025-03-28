@@ -31,7 +31,7 @@ pip install -e third_party/robomimic/
 
 
 
-- Downloading and processing [libero](https://github.com/Lifelong-Robot-Learning/LIBERO) data and using [Cotracker](https://github.com/facebookresearch/co-tracker) to get trajectory labels.
+- Downloading and processing [libero](https://github.com/Lifelong-Robot-Learning/LIBERO) data as well as using [Cotracker](https://github.com/facebookresearch/co-tracker) to get trajectory labels.
 
 ```
 mkdir data
@@ -42,4 +42,24 @@ python -m scripts.preprocess_libero --suite libero_goal
 python -m scripts.preprocess_libero --suite libero_10
 python -m scripts.preprocess_libero --suite libero_90
 python -m scripts.split_libero_dataset
+```
+
+## Training
+
+- Stage 1: Training trajectory prediction models with actionless large-scale out-of-domain video data and small-scale in-domain video data.
+
+```
+USE_BFLOAT16=true python -m scripts.train_libero_track_transformer --suite $SUITE_NAME
+```
+
+- Stage 2: Training trajectory-guided policy with small-scale in-domain robot data.
+
+```
+USE_BFLOAT16=false python -m scripts.train_libero_policy_atm --suite $SUITE_NAME --tt $PATH_TO_TT
+```
+
+## Evaluation
+
+```
+USE_BFLOAT16=false python -m scripts.eval_libero_policy --suite $SUITE_NAME --exp-dir $PATH_TO_EXP
 ```
