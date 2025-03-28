@@ -1,0 +1,115 @@
+# track_act baseline  and track_act baseline+moe
+
+defaults:
+  - _self_
+
+experiment: track_act # tag for wandb and log dir
+
+hydra:
+  run:
+    dir: ./results/track_transformer/${now:%m%d}_${experiment}_${now:%H%M}
+  sweep:
+    dir: ./results/track_transformer/${now:%m%d}_${experiment}_${now:%H%M}
+    subdir: ${hydra.job.num}
+
+wandb:
+  project: atm_libero
+  name: ${now:%m%d}_${experiment}_${now:%H%M}_${hydra:job.num}
+  group: ${experiment}
+
+train_gpus: [0]
+
+# Training
+lr: 1e-4  # base lr 1e-4
+batch_size: 512
+mix_precision: true
+num_workers: 16
+val_freq: 5
+save_freq: 5
+clip_grad: 2.  # 3.0?
+epochs: 101
+seed: 0
+dry: false
+
+devices: 4
+num_nodes: 1
+num_accumulation_steps: 1
+compile: false
+
+model_name: TrackACT
+
+ema: false
+ema_rate: 0.9999
+
+dim: 384
+dim_head: null
+heads: 8
+depth: 8
+
+img_size: 128
+frame_stack: 1
+num_track_ts: 16
+num_track_ids: 32
+patch_size: 16
+track_patch_size: 4
+
+aug_prob: 0.9
+dynamic_mask: False
+gt_traj: False
+
+train_dataset: ???
+val_dataset: ???
+
+
+optimizer_cfg:
+  type: optim.AdamW
+  params:
+    lr: ${lr}
+    weight_decay: 0.001 
+    
+
+scheduler_cfg:
+  type: CosineAnnealingLRWithWarmup
+  params:
+    warmup_lr: 1e-5 
+    warmup_epoch: 5 
+    T_max: ${epochs}
+
+
+model_cfg:
+  encoder_embed_dim: ${dim}
+  decoder_embed_dim: ${dim}
+  encoder_depth: 1
+  decoder_depth: 5
+  encoder_num_heads: ${heads}
+  decoder_num_heads: ${heads}
+  num_track_ts: ${num_track_ts}
+  num_track_ids: ${num_track_ids}
+  grad_checkpointing: false
+  track_dim: 2
+  frame_stack: 1
+  cond_dim: ${dim}
+  include_intrinsics: false
+  inference_config:
+    num_iter: 64  # [1, 256]
+    cfg: 8.5  # [1.0, 10.0]
+    cfg_schedule: constant  # [linear, constant]
+    temperature: 1.0  # [0.9, 1.1]
+    progress: False
+  data_mean: [0, 0]
+  data_std: [1, 1]
+  pe_L: 12
+  use_ar_loss: False
+  use_diffusion_loss: True
+  ar_loss_weight: 1.0
+  load_path: 
+  track_patch_size: 4
+  pure_3d: false
+
+dataset_cfg:
+  img_size: ${img_size}
+  frame_stack: ${frame_stack}
+  num_track_ts: ${num_track_ts}
+  num_track_ids: ${num_track_ids}
+  cache_all: true
+  cache_image: false
