@@ -31,25 +31,15 @@ pip install -e third_party/robomimic/
 
 
 
-- Downloading and processing [libero](https://github.com/Lifelong-Robot-Learning/LIBERO) data.
+- Downloading and processing [libero](https://github.com/Lifelong-Robot-Learning/LIBERO) data and using [Cotracker](https://github.com/facebookresearch/co-tracker) to get trajectory labels.
 
 ```
 mkdir data
 python -m scripts.download_libero_datasets
-```
-
-and then preprocess them with [Cotracker](https://github.com/facebookresearch/co-tracker):
-
-```
 python -m scripts.preprocess_libero --suite libero_spatial
 python -m scripts.preprocess_libero --suite libero_object
 python -m scripts.preprocess_libero --suite libero_goal
 python -m scripts.preprocess_libero --suite libero_10
 python -m scripts.preprocess_libero --suite libero_90
-```
-
-After preprocessing, split the datasets into training and validation sets:
-
-```
 python -m scripts.split_libero_dataset
 ```
