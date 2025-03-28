@@ -71,9 +71,15 @@ USE_BFLOAT16=false python -m scripts.eval_libero_policy --suite $SUITE_NAME --ex
 ```
 
 ## Citation
+
 Please cite the following paper if you feel this repository useful for your research.
 ```
-
+@article{yang2024tra,
+  title={Tra-MoE: Learning Trajectory Prediction Model from Multiple Domains for Adaptive Policy Conditioning},
+  author={Yang, Jiange and Zhu, Haoyi and Wang, Yating and Wu, Gangshan and He, Tong and Wang, Limin},
+  journal={arXiv preprint arXiv:2411.14519},
+  year={2024}
+}
 ```
 ## Acknowledges
 
