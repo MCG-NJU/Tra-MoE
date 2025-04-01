@@ -99,4 +99,8 @@ Thanks to the open source of the following projects:
 
 [RealRobot](https://github.com/HaoyiZhu/RealRobot)
 
+[LIBERO](https://github.com/Lifelong-Robot-Learning/LIBERO)
+
+[RLbench](https://github.com/stepjam/RLBench)
+
 
