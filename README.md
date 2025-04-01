@@ -10,7 +10,7 @@
 
 ## Low-Cost Dual-Arm Robot Demos
 
-The videos are all done automatically by learned policies.
+The videos are all done automatically by learned policy (Learn from human and robot data).
 
 | Fold | Pick and Pass | Pour |
 | --------- | ---------- | ----------- |
